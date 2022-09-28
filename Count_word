@@ -1,0 +1,35 @@
+import java.util.Scanner;
+
+public class count_word {
+
+    public static void main(String[] args)
+    {
+        Scanner input = new Scanner(System.in);
+        String sentence;
+        String word;
+        int count = 0;
+
+        System.out.println("THIS PROGRAM COUNTS THE WORDS IN A SENTENCE!!!\n\n");
+        System.out.print("Enter the sentence: ");
+        sentence = input.nextLine();
+
+        System.out.print("Enter the word to be checked: ");
+        word = input.nextLine();
+        word = word.toLowerCase();
+
+        String[] arr_str = sentence.split(" ");
+
+        for(int i = 0; i < arr_str.length; i++){
+
+            arr_str[i] = arr_str[i].toLowerCase();
+
+            if(arr_str[i].equals(word))
+                count++;            
+        }
+
+        System.out.println("Frequency of searched: " + count);
+
+        input.close();
+    }
+
+}
